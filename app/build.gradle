@@ -24,14 +24,14 @@ android {
         targetCompatibility = "8"
         sourceCompatibility = "8"
     }
-//    packagingOptions {
-//        exclude 'META-INF/DEPENDENCIES'
-//    }
-//    configurations.all {
-//        resolutionStrategy {
-//            force 'org.eclipse.jetty:jetty-server:9.4.0.v20180619'
-//        }
-//    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'org.eclipse.jetty:jetty-server:9.4.0.v20180619'
+        }
+    }
 }
 
 dependencies {
@@ -65,5 +65,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.1'
     androidTestImplementation 'commons-io:commons-io:2.4'
     androidTestImplementation "com.github.tomakehurst:wiremock-jre8:2.23.2"
-//    androidTestImplementation "org.eclipse.jetty:jetty-server:9.4.0.v20180619"
 }
