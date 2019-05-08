@@ -44,9 +44,13 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'commons-io:commons-io:2.4'
+    testImplementation "com.github.tomakehurst:wiremock-jre8:2.23.2"
+
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
