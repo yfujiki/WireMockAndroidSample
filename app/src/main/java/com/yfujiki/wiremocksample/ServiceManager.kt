@@ -26,5 +26,24 @@ class ServiceManager {
 
             return retrofit.create<TMDBService>(TMDBService::class.java)
         }
+
+        fun tmdbTestService(): TMDBService {
+            val logging = HttpLoggingInterceptor()
+            logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
+            val client = OkHttpClient.Builder()
+                .addInterceptor(logging)
+                .build()
+
+            val retrofit = Retrofit.Builder()
+                .client(client)
+                .baseUrl("http://127.0.0.1")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(
+                    RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+                .build()
+
+            return retrofit.create<TMDBService>(TMDBService::class.java)
+        }
+
     }
 }
