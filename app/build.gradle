@@ -26,6 +26,7 @@ android {
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
+        exclude 'mozilla/public-suffix-list.txt'
     }
     configurations.all {
         resolutionStrategy {
@@ -64,5 +65,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.1'
     androidTestImplementation 'commons-io:commons-io:2.4'
-    androidTestImplementation "com.github.tomakehurst:wiremock-jre8:2.23.2"
+    androidTestImplementation("com.github.tomakehurst:wiremock-jre8:2.23.2") {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+
+    androidTestImplementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
 }
